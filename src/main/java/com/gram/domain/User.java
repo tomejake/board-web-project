@@ -1,10 +1,11 @@
 package com.gram.domain;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @NoArgsConstructor
@@ -23,5 +24,16 @@ public class User {
     private String password;
 
     @Column
-    private LocalDate joinDate;
+    private LocalDateTime joinDate;
+
+    @Column
+    private LocalDateTime lastLoginDate;
+
+    @Builder
+    public User(String userid, String password, LocalDateTime joinDate, LocalDateTime lastLoginDate){
+        this.userid = userid;
+        this.password = password;
+        this.joinDate = joinDate;
+        this.lastLoginDate = lastLoginDate;
+    }
 }
