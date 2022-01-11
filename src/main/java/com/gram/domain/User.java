@@ -31,10 +31,9 @@ public class User implements Serializable {
     private LocalDateTime lastLoginDate;
 
     @Builder
-    public User(String userid, String password, LocalDateTime joinDate, LocalDateTime lastLoginDate){
+    public User(String userid, String password, LocalDateTime joinDate){
         this.userid = userid;
         this.password = password;
         this.joinDate = joinDate;
-        this.lastLoginDate = lastLoginDate;
     }
 }
