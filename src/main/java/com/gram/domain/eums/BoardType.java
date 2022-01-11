@@ -1,4 +1,4 @@
-package com.gram.domain;
+package com.gram.domain.eums;
 
 public enum BoardType {
     notice("공지사항"),
