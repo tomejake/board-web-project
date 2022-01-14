@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style scoped>
-nav{width:100%; position:relative; height:50px; border-bottom:1px solid #111}
+nav{width:100%; position:relative; height:50px; border-bottom:1px solid #111;}
 nav ul.menu{text-align: center;}
 nav ul.menu li{padding:10px 40px; display: inline-block;}
 
