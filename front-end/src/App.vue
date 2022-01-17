@@ -5,8 +5,6 @@
     <Contents />
     <Footer />
   </div>
-
-
 </template>
 
 <script>

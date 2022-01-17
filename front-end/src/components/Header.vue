@@ -18,9 +18,8 @@
         </span><br>
 
         <span class="button">
-          <button type="submit"  disabled="disabled">로그인</button>
+          <button type="submit"  disabled="disabled">로그인</button>&ensp;
           <button @click="$store.state.step2">회원가입</button><br>
-          <button @click="clickMessage">버튼</button>
 
           <!-- <input type="checkbox" id="keepLogin" name="keepLogin">
           <label for="keepLogin"><span>자동 로그인</span></label><br> -->
