@@ -1,5 +1,4 @@
 <template>
-<body>
   <nav>
     <ul>
       <li class="menu">
@@ -52,7 +51,6 @@
       </li>
     </ul>
   </nav>
-</body>
 </template>
 
 <script>
@@ -68,8 +66,7 @@ export default {
     width: 100%; /* 전체화면 크기 지정 */
     background-color: #111; /* 네비 바 전체 색상 */
     list-style-type: none; /* 목록에 블릿이 안 나오게 설정 */
-    margin: 0;
-    padding: 0;
+    height: 50px;
   }
   
   nav ul li {
@@ -80,27 +77,28 @@ export default {
   .menu {
   /* li태그에 적용되는 메뉴 정의 */
     position: relative;
+    margin: 0px 125px 0px 125px;
   }
 
   .menu-sub {
   /* 메인 메뉴 텍스트 */
     color: #fff;
-    padding: 10px;
-    font-size: 12px;
+    padding: 15px 0 15px 0;
+    font-size: 16px;
     cursor: pointer; /* 마우스 포인터 위치시 손가락 모양으로 변경 설정 */
   }
 
   .menu-content {
   /* 서브 메뉴 항목 (슬라이드 되는 메뉴 영역) */
     position: absolute; /* .menu의 포지션이 relative이므로 menu기준 절대위치 지정하고 슬라이드 효과 유도(?) */
+    right: -50px;
     background-color: #444;
-    min-width: 100px; /* 슬라이드 메뉴 최소 너비 */
-
+    min-width: 150px; /* 슬라이드 메뉴 최소 너비 */
     display: none; /* 서브 메뉴 숨기기 (커서 위치전 까지 안보이게 설정) */
   }
   .menu-content a {
     color: #222;
-    padding: 6px;
+    padding: 15px 25px 15px 25px;
     text-decoration: none; /* 선을 안 보이게 설정 */
     display: block; /* a태그는 인라인 속성이니까 블록 속성을 가지게 한줄 배치 */
   }

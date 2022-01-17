@@ -1,13 +1,22 @@
 import { createStore } from 'vuex'
 
-const store = new createStore({
-    state: {
-        step1: 0,
-        step2: 1,
+const store = createStore({
+    state(){
+      return {
+        currentView: "Contents",
+      }
     },
-    mutations: {
+    mutations : {
+      setPageState(state, data){
+        state.currentView = data;
+      }
+    },
+    actions: {
+
+    },
+    modules: {
 
     }
-})
+  });
 
 export default store;
