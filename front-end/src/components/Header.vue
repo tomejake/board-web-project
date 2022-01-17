@@ -19,7 +19,8 @@
 
         <span class="button">
           <button type="submit"  disabled="disabled">로그인</button>
-          <button type="submit">회원가입</button><br>
+          <button @click="$store.state.step2">회원가입</button><br>
+          <button @click="clickMessage">버튼</button>
 
           <!-- <input type="checkbox" id="keepLogin" name="keepLogin">
           <label for="keepLogin"><span>자동 로그인</span></label><br> -->
@@ -31,8 +32,28 @@
 </template>
 
 <script>
+ 
 export default {
+  name : 'Header',
+  props : {
+    
+  },
 
+  data() {
+    return {
+      message:'경고창'
+    }
+  },
+
+  methods: {
+    clickMessage: function () {
+      alert(app.message)
+    }
+  },
+
+  components:{
+    
+  }
 }
 </script>
 
