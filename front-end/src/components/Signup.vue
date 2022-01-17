@@ -1,26 +1,22 @@
 <template>
-    <form name="signUp" v-if="step == 1">
+<form name="signUp">
   <h1>회원가입</h1>
   <label> 아이디
-    <input type="id"  id="userId" placeholder="Enter User ID"/>
+    <input class="signup-input" type="id"  id="userId" placeholder="Enter User ID"/>
   </label>
-
   <label> 비밀번호
-    <input type="password" id="userPassword" placeholder="Enter User Password"/>
+    <input class="signup-input" type="password" id="userPassword" placeholder="Enter User Password"/>
   </label>
-
   <label> 비밀번호 확인
-    <input type="password" id="checkPassword" placeholder="Enter Password again">
+    <input class="signup-input" type="password" id="checkPassword" placeholder="Enter Password again">
   </label>
-  
-  <button id="submit" v-if="step == 0">Submit</button>
-
+  <input type="submit" name="submit" id="submit" value="확인" />
 </form>
 </template>
 
 <script>
 export default {
-
+  name : 'Signup'
 }
 </script>
 
@@ -41,7 +37,7 @@ label {
     color : #555; text-align: left;
 }
 
-input {
+.signup-input {
     width : 100%; height : 35px; padding : 0 15px; 
     box-sizing : border-box; border : 1px solid #ddd;
 }

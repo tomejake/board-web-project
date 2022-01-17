@@ -2,7 +2,7 @@
   <div id="app">
     <Header />
     <Nav />
-    <Contents />
+    <component :is="$store.state.currentView"></component>
     <Footer />
   </div>
 </template>
@@ -12,12 +12,14 @@ import Header from './components/Header.vue';
 import Nav from './components/Nav.vue';
 import Contents from './components/Contents.vue';
 import Footer from './components/Footer.vue';
+import Signup from './components/Signup.vue';
+import {mapState, mapMutations, mapActions} from 'vuex'
 
 export default {
   name: 'App',
   data() {
     return {
-
+      currentView: "Contents"
     }
   },
   components: {
@@ -25,7 +27,16 @@ export default {
     Nav,
     Contents,
     Footer,
-  }
+    Signup
+  },
+  computed : {
+    ...mapState(['name', 'selectPage', 'pageState']),
+  },
+  methods: {
+    ...mapActions([]),
+    ...mapMutations(['setPageState']),
+  },
+
 }
 </script>
 
