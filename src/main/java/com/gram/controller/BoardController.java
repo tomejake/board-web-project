@@ -9,7 +9,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://localhost:8081" )
 @RestController
 @RequestMapping("/api")
 public class BoardController {
@@ -23,7 +23,7 @@ public class BoardController {
         return "/board/form";
     }
 
-    @GetMapping({"","/"})
+    @GetMapping({"/list"})
     public Page<Board> list(@PageableDefault(size = 10) Pageable pageable, Model model){
         return boardService.findBoardList(pageable);
     }
