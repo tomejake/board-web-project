@@ -34,7 +34,6 @@ public class JpaMappingTest {
                 .build());
 
         Board board = boardRepository.save(Board.builder()
-                .userid("testid")
                 .title("testtitle")
                 .content("testcontent")
                 .boardType(BoardType.free)
@@ -50,7 +49,6 @@ public class JpaMappingTest {
         assertThat(user.get(0).getPassword()).isEqualTo("testpw");
 
         List<Board> board = boardRepository.findAll();
-        assertThat(board.get(0).getUserid()).isEqualTo("testid");
         assertThat(board.get(0).getTitle()).isEqualTo("testtitle");
         assertThat(board.get(0).getContent()).isEqualTo("testcontent");
         assertThat(board.get(0).getBoardType()).isEqualTo(BoardType.free);

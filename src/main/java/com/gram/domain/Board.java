@@ -20,9 +20,6 @@ public class Board implements Serializable {
     private Long idx;
 
     @Column
-    private String userid;
-
-    @Column
     private String title;
 
     @Column
@@ -42,8 +39,7 @@ public class Board implements Serializable {
     private User user;
 
     @Builder
-    public Board(String userid, String title, String content, BoardType boardType, LocalDateTime writeDate, LocalDateTime modifyDate, User user){
-        this.userid = userid;
+    public Board(String title, String content, BoardType boardType, LocalDateTime writeDate, LocalDateTime modifyDate, User user){
         this.title = title;
         this.content = content;
         this.boardType = boardType;

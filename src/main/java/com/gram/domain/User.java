@@ -27,9 +27,6 @@ public class User implements Serializable {
     @Column
     private LocalDateTime joinDate;
 
-    @Column
-    private LocalDateTime lastLoginDate;
-
     @Builder
     public User(String userid, String password, LocalDateTime joinDate){
         this.userid = userid;
