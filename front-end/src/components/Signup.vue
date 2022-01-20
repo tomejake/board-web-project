@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import {registUser} from '../Services/UserJoinService.js'
+
 export default {
   name : 'Signup',
   data() {
@@ -21,9 +23,13 @@ export default {
     }
   },
   methods: {
-    submitForm(){
-      console.log('123');
-    }
+    async submitForm() {
+      const userData = {
+        userid: this.userid,
+        password: this.password
+      };
+      await registUser(userData);
+    },
   },
 }
 </script>

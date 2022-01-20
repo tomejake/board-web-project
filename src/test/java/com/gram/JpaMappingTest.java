@@ -5,7 +5,6 @@ import com.gram.domain.User;
 import com.gram.domain.eums.BoardType;
 import com.gram.repository.BoardRepository;
 import com.gram.repository.UserRepository;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
