@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-const BOARD_API_BASE_URL = 'http://localhost:7070/api/list';
+const API_BASE_URL = 'http://localhost:7070/api/';
 
 class BoardService{
     getBoardList(){
-        return axios.get(BOARD_API_BASE_URL);
+        return axios.get(API_BASE_URL+'list');
     }
 }
 
