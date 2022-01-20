@@ -29,8 +29,16 @@ public class UserService {
     public void findAll(){
         List<User> all = userRepository.findAll();
         for (User u: all) {
-            System.out.println("id = " + u.getUserid() + "\t pw = " + u.getPassword() + "\t date = " + u.getJoinDate());
+            System.out.println("idx = "+u.getIdx()+"\t id = " + u.getUserid() + "\t pw = " + u.getPassword() + "\t date = " + u.getJoinDate());
         }
+    }
+
+    public boolean login(User user) {
+        User byUserid = userRepository.findByUserid(user.getUserid());
+        if (byUserid != null && byUserid.getPassword().equals(user.getPassword())){
+            return true;
+        }
+        return false;
     }
 
 }

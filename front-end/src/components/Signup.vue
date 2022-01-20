@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import {registUser} from '../Services/UserJoinService.js'
+import UserService from '../Services/UserService.js'
 
 export default {
   name : 'Signup',
@@ -28,7 +28,7 @@ export default {
         userid: this.userid,
         password: this.password
       };
-      await registUser(userData);
+      await UserService.registUser(userData);
     },
   },
 }

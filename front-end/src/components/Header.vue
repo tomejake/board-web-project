@@ -9,49 +9,58 @@
   <div class="block"></div>
   <!-- 로그인 영역 -->
   <div class="login">
-    <span>
-      <label for="loginId"></label>
-      <input type="email" id="loginId" name="loginId" placeholder="ID" size=10>
-    </span><br>
-    <span>
-      <label for="loginPw"></label>
-      <input type="password" id="loginPw" name="password" placeholder="Password" size=10>
-    </span><br>
-    <span class="button">
-      <button type="submit"  disabled="disabled">로그인</button>&ensp;
-      <button class="signup-btn" @click="$store.commit('setPageState', 'Signup')">회원가입</button><br>
-      <!-- <input type="checkbox" id="keepLogin" name="keepLogin">
-      <label for="keepLogin"><span>자동 로그인</span></label><br> -->
-      <!-- 자동 로그인 기능은 추후에 기능 개발 예정입니다.ㅎ -->
-    </span>
+    <form name="loginForm" @submit.prevent="loginForm">
+      <span>
+        <label for="userid"></label>
+        <input type="text" id="userid" name="userid" v-model="userid" placeholder="ID" size=10>
+      </span><br>
+      <span>
+        <label for="password"></label>
+        <input type="password" id="password" name="password" v-model="password" placeholder="Password" size=10>
+      </span><br>
+      <span class="button">
+        <input type="submit" class="signup-btn" value="로그인" /> &ensp;
+        <a class="signup-btn" @click="$store.commit('setPageState', 'Signup')">회원가입</a>
+        <!-- <input type="checkbox" id="keepLogin" name="keepLogin">
+        <label for="keepLogin"><span>자동 로그인</span></label><br> -->
+        <!-- 자동 로그인 기능은 추후에 기능 개발 예정입니다. -->
+      </span>
+    </form>
   </div>
   <!-- /로그인 영역 끝/ -->
   </header>
 </template>
 
 <script>
- 
+import UserService from '../Services/UserService.js'
+
 export default {
   name : 'Header',
-  props : {
-    
-  },
-
   data() {
     return {
-      message:'경고창'
+      userid: '',
+      password: '',
+      result: []
     }
   },
 
   methods: {
-    clickMessage: function () {
-      alert(app.message)
+    async loginForm() {
+      console.log(this);
+      const userData = {
+        userid: this.userid,
+        password: this.password
+      };
+      await UserService.loginUser(userData).then(res => {
+        console.log("값 전달 성공");
+        UserService.getLoginResult().then((response) => {
+          this.result = response.data;
+        });
+      }).catch(err => {
+        console.log("값 전달 실패");
+      });
     }
   },
-
-  components:{
-    
-  }
 }
 </script>
 
