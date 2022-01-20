@@ -36,8 +36,23 @@ public class BoardController {
 
     @PostMapping("/join")
     @ResponseBody
-    public void Join(@RequestBody User user){
+    public void join(@RequestBody User user){
+        System.out.println("join.id = " + user.getUserid());
+        System.out.println("join.pw = " + user.getPassword());
         userService.userJoin(user);
         userService.findAll();
+    }
+
+    @PostMapping("/login")
+    @ResponseBody
+    public void login(@RequestBody User loginData){
+        System.out.println("login.id = " + loginData.getUserid());
+        System.out.println("login.pw = " + loginData.getPassword());
+        loginResult(loginData);
+    }
+
+    @GetMapping("loginResult")
+    public boolean loginResult(@RequestBody User loginData){
+        return userService.login(loginData);
     }
 }
