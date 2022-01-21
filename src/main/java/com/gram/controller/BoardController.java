@@ -10,7 +10,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.view.RedirectView;
 
 @CrossOrigin(origins = "http://localhost:4000" )
 @RestController
@@ -45,14 +44,9 @@ public class BoardController {
 
     @PostMapping("/login")
     @ResponseBody
-    public void login(@RequestBody User loginData){
+    public boolean login(@RequestBody User loginData){
         System.out.println("login.id = " + loginData.getUserid());
         System.out.println("login.pw = " + loginData.getPassword());
-        loginResult(loginData);
-    }
-
-    @GetMapping("loginResult")
-    public boolean loginResult(@RequestBody User loginData){
         return userService.login(loginData);
     }
 }

@@ -8,6 +8,7 @@ import org.springframework.data.annotation.Transient;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -35,10 +36,11 @@ public class UserService {
 
     public boolean login(User user) {
         User byUserid = userRepository.findByUserid(user.getUserid());
+        boolean result = false;
         if (byUserid != null && byUserid.getPassword().equals(user.getPassword())){
-            return true;
+            result = true;
         }
-        return false;
+        return result;
     }
 
 }

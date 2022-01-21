@@ -7,8 +7,12 @@
   </div>
   <!-- /로고 영역 끝/ -->
   <div class="block"></div>
+
+  <div class="login" v-if="result">
+    {{userid}}님 환영합니다.
+  </div>
   <!-- 로그인 영역 -->
-  <div class="login">
+  <div class="login" v-else>
     <form name="loginForm" @submit.prevent="loginForm">
       <span>
         <label for="userid"></label>
@@ -40,7 +44,7 @@ export default {
     return {
       userid: '',
       password: '',
-      result: []
+      result: false,
     }
   },
 
@@ -51,15 +55,17 @@ export default {
         userid: this.userid,
         password: this.password
       };
-      await UserService.loginUser(userData).then(res => {
-        console.log("값 전달 성공");
-        UserService.getLoginResult().then((response) => {
-          this.result = response.data;
-        });
+      await UserService.loginUser(userData).then((response) => {
+        this.result = response.data;
+        if(this.result){
+          alert("환영합니다.");
+        } else {
+          alert("아이디 또는 비밀번호를 확인해주세요.");
+        }
       }).catch(err => {
         console.log("값 전달 실패");
       });
-    }
+    },
   },
 }
 </script>
