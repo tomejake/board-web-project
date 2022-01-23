@@ -49,4 +49,12 @@ public class BoardController {
         System.out.println("login.pw = " + loginData.getPassword());
         return userService.login(loginData);
     }
+
+    @PostMapping("/write")
+    @ResponseBody
+    public void write(@RequestBody Board board){
+        System.out.println("boardType == " + board.getBoardType());
+        System.out.println("title == " + board.getTitle());
+        System.out.println("content == " + board.getContent());
+    }
 }

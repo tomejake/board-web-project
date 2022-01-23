@@ -14,7 +14,8 @@ import Contents from './components/Contents.vue';
 import Footer from './components/Footer.vue';
 import Signup from './components/Signup.vue';
 import WriteComponent from './components/WriteComponent.vue';
-import {mapState, mapMutations, mapActions} from 'vuex'
+import ReadComponent from './components/ReadComponent.vue';
+import {mapState, mapMutations, mapActions} from 'vuex';
 
 export default {
   name: 'App',
@@ -29,7 +30,8 @@ export default {
     Contents,
     Footer,
     Signup,
-    WriteComponent
+    WriteComponent,
+    ReadComponent
   },
   computed : {
     ...mapState(['name', 'selectPage', 'pageState']),

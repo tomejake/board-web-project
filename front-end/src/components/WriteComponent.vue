@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import BoardService from '../Services/BoardService.js'
+
 export default {
     name: "WriteComponent",
     data() {
@@ -55,7 +57,6 @@ export default {
 .writeForm {
     margin: 0px auto;
     padding: 10px;
-    background: gray;
     width: 60%;
     position: relative;
     height: 1000px;
