@@ -20,7 +20,7 @@
       </tbody>
     </table>
     <p class="write_btn">
-      <button>글쓰기</button>
+      <button @click="$store.commit('setPageState', 'WriteComponent')">글쓰기</button>
     </p>
     <ul class="page">
       <li>&laquo;</li>

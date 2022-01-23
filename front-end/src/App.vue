@@ -13,6 +13,7 @@ import Nav from './components/Nav.vue';
 import Contents from './components/Contents.vue';
 import Footer from './components/Footer.vue';
 import Signup from './components/Signup.vue';
+import WriteComponent from './components/WriteComponent.vue';
 import {mapState, mapMutations, mapActions} from 'vuex'
 
 export default {
@@ -27,7 +28,8 @@ export default {
     Nav,
     Contents,
     Footer,
-    Signup
+    Signup,
+    WriteComponent
   },
   computed : {
     ...mapState(['name', 'selectPage', 'pageState']),

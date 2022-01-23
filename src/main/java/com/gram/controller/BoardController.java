@@ -30,7 +30,6 @@ public class BoardController {
 
     @GetMapping("/list")
     public Page<Board> list(@RequestParam int pageNum){
-        System.out.println("pageNum = " + pageNum);
         return boardService.findBoardList(pageNum);
     }
 
