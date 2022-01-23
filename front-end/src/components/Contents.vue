@@ -13,7 +13,7 @@
           <td>{{item.idx}}</td>
           <td>{{item.boardType}}</td>
           <td>
-            <a @click="$store.commit('setPageState', 'ReadComponent')" class="title-link">{{item.title}}</a>
+            <a @click="$store.commit('setPageState', 'ReadComponent'); $store.commit('setThisBoard', item);" class="title-link">{{item.title}}</a>
           </td>
           <td>{{item.writeDate}}</td>
         </tr>

@@ -2,16 +2,16 @@
     <div class="read">
         <div class="content">
             <div class="title">
-                글 제목 부분 입니다.
+                {{$store.state.thisBoard.title}}
             </div>
-            <div class="writingDate">
-                0000.00.00
+            <div class="writeDate">
+                {{$store.state.thisBoard.writeDate}}
             </div>
             <div class="nickName">
-                시스템 모니터
+                {{$store.state.thisBoard.user.userid}}
             </div>
             <div class="main">
-                글 내용 부분 입니다.
+                {{$store.state.thisBoard.content}}
             </div>
         </div>
     </div>
