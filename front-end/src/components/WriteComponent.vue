@@ -24,7 +24,6 @@
             </div>
       </div>
   </form>
-  {{log}}
 </template>
 
 <script>
@@ -37,7 +36,6 @@ export default {
             boardType: '',
             title: '',
             content: '',
-            log: ''
         }
     },
     methods: {

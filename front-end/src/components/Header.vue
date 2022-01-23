@@ -47,7 +47,6 @@ export default {
       result: false,
     }
   },
-
   methods: {
     async loginForm() {
       console.log(this);
