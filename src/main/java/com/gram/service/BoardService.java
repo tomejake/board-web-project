@@ -16,8 +16,8 @@ public class BoardService {
     @Autowired
     private final BoardRepository boardRepository;
 
-    public Page<Board> findBoardList(Pageable pageable){
-        pageable = PageRequest.of(pageable.getPageNumber() <= 0 ? 0 : pageable.getPageNumber() - 1, pageable.getPageSize());
+    public Page<Board> findBoardList(int pageNum){
+        Pageable pageable = PageRequest.of(pageNum, 10);
         return boardRepository.findAll(pageable);
     }
 

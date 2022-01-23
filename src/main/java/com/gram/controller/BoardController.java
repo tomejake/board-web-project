@@ -29,8 +29,9 @@ public class BoardController {
     }
 
     @GetMapping("/list")
-    public Page<Board> list(@PageableDefault Pageable pageable){
-        return boardService.findBoardList(pageable);
+    public Page<Board> list(@RequestParam int pageNum){
+        System.out.println("pageNum = " + pageNum);
+        return boardService.findBoardList(pageNum);
     }
 
     @PostMapping("/join")
