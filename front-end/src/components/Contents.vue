@@ -13,14 +13,14 @@
           <td>{{item.idx}}</td>
           <td>{{item.boardType}}</td>
           <td>
-            <a href="#">{{item.title}}</a>
+            <a @click="$store.commit('setPageState', 'ReadComponent'); $store.commit('setThisBoard', item);" class="title-link">{{item.title}}</a>
           </td>
           <td>{{item.writeDate}}</td>
         </tr>
       </tbody>
     </table>
     <p class="write_btn">
-      <button>글쓰기</button>
+      <button @click="$store.commit('setPageState', 'WriteComponent')">글쓰기</button>
     </p>
     <ul class="page">
       <li>&laquo;</li>
@@ -66,10 +66,10 @@ export default {
       if(this.totalPages >= this.firstPage+11){
           this.firstPage += 10;
       }
-    }
+    },
   },
   created() {
-      this.getBoard(1);
+    this.getBoard(1);
   }
 }
 </script>
@@ -79,7 +79,7 @@ export default {
 * {margin : 0; padding : 0;}
 
 main {
-  margin:0 auto; padding: 0; width: 45%;
+  margin:0 auto; padding: 0; width: 25%;
 }
 
 .main-container {
@@ -97,6 +97,10 @@ main {
 
 .main-container table th{
   height: 100px;
+}
+
+.title-link {
+  cursor: pointer;
 }
 
 .page li{

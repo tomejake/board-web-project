@@ -1,68 +1,66 @@
 <template>
     <div class="read">
-    
         <div class="content">
             <div class="title">
-                글 제목 부분 입니다.
+                {{$store.state.thisBoard.title}}
             </div>
-
-            <div class="writingDate">
-                0000.00.00
+            <div class="writeDate">
+                {{$store.state.thisBoard.writeDate}}
             </div>
-
             <div class="nickName">
-                시스템 모니터
+                {{$store.state.thisBoard.user.userid}}
             </div>
-
             <div class="main">
-                글 내용 부분 입니다.
+                {{$store.state.thisBoard.content}}
             </div>
         </div>
+    </div>
 </template>
 
 <script>
 export default {
-
+    name: "ReadComponent"
 }
 </script>
 
 <style>
-* {margin : 0; padding : 0;}
 
 .read {
     width : 50%; margin : 50px auto ; border : 1px solid #111;
 }
 
 .content {
-    margin : 5px 0; padding: 0 10px; 
     color : #555; text-align: left; font-size: 20px;
     border-right: none; border-left: none;
 }
 
+.content div{
+    padding: 5px;
+}
+
 .title {
     float: left;
-    width : 80%; height : 35px; padding : 0 15px; 
+    width : 80%; height : 40px;
     box-sizing : border-box;
     border-right: none; border-left: none;
 }
 
 .writingDate {
     float: left; text-align: center;
-    width : 20%; height : 35px;
+    width : 20%; height : 40px;
     box-sizing : border-box; vertical-align: bottom;
-    border-right: none; border-left: none;
+    border-right: none; border-left: solid 1px black;
 }
 
 .nickName {
     float: left;
-    width : 100%; height : 35px; padding : 0 15px; 
+    width : 100%; height : 40px;
     box-sizing : border-box; border : 1px solid #111;
     border-right: none; border-left: none;
 }
 
 .main {
-    width : 100%; height : 500px; padding : 0 15px; 
-    box-sizing : border-box; border : 1px solid #111;
-    border-right: none; border-left: none;
+    width : 100%; height : 600px;
+    box-sizing : border-box;
 }
 </style>

@@ -30,7 +30,6 @@ public class BoardController {
 
     @GetMapping("/list")
     public Page<Board> list(@RequestParam int pageNum){
-        System.out.println("pageNum = " + pageNum);
         return boardService.findBoardList(pageNum);
     }
 
@@ -49,5 +48,13 @@ public class BoardController {
         System.out.println("login.id = " + loginData.getUserid());
         System.out.println("login.pw = " + loginData.getPassword());
         return userService.login(loginData);
+    }
+
+    @PostMapping("/write")
+    @ResponseBody
+    public void write(@RequestBody Board board){
+        System.out.println("boardType == " + board.getBoardType());
+        System.out.println("title == " + board.getTitle());
+        System.out.println("content == " + board.getContent());
     }
 }
