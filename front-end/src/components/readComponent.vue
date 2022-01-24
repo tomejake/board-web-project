@@ -66,5 +66,5 @@ export default {
 .read-main {
     width : 100%; height : 600px;
     box-sizing : border-box;
-}
+} 
 </style>

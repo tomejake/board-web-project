@@ -79,7 +79,7 @@ export default {
 * {margin : 0; padding : 0;}
 
 main {
-  margin:0 auto; padding: 0; width: 25%;
+  margin:0 auto; padding: 0; width: 40%;
 }
 
 .main-container {

@@ -6,8 +6,6 @@ import com.gram.service.BoardService;
 import com.gram.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.web.PageableDefault;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -56,5 +54,6 @@ public class BoardController {
         System.out.println("boardType == " + board.getBoardType());
         System.out.println("title == " + board.getTitle());
         System.out.println("content == " + board.getContent());
+        boardService.insertBoard(board);
     }
 }
